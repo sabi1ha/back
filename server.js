@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://sabiha1fashon:o0nuYkGjBIadDtgm@cluster0.hjr4gzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect("mongodb+srv://sabiha1fashon:o0nuYkGjBIadDtgm@cluster0.hjr4gzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -33,7 +33,9 @@ const orderSchema = new mongoose.Schema({
 const Order = mongoose.model('Order', orderSchema);
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 app.use(bodyParser.json());
 
 // Create new order
@@ -53,7 +55,7 @@ app.get('/', async (req, res) => {
     try {
 
         res.status(200).json("Server is running");
-    } catch (err) { 
+    } catch (err) {
         res.status(400).json({ error: 'Error fetching orders!' });
     }
 });
