@@ -8,12 +8,12 @@ mongoose.connect('mongodb+srv://sabiha1fashon:o0nuYkGjBIadDtgm@cluster0.hjr4gzg.
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then(() => {
-    console.log('Connected to MongoDB');
-})
-.catch((err) => {
-    console.error('MongoDB connection error:', err);
-});
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((err) => {
+        console.error('MongoDB connection error:', err);
+    });
 
 // Define Order Schema
 const orderSchema = new mongoose.Schema({
@@ -49,6 +49,15 @@ app.post('/api/order', async (req, res) => {
 });
 
 // Get all orders
+app.get('/', async (req, res) => {
+    try {
+
+        res.status(200).json("Server is running");
+    } catch (err) { 
+        res.status(400).json({ error: 'Error fetching orders!' });
+    }
+});
+
 app.get('/api/orders', async (req, res) => {
     try {
         const orders = await Order.find();
