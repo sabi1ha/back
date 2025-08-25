@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://sabiha1fashon:o0nuYkGjBIadDtgm@cluster0.hjr4gzg.mongodb.net/sabidb', {
+mongoose.connect('mongodb+srv://sabiha1fashon:o0nuYkGjBIadDtgm@cluster0.hjr4gzg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
