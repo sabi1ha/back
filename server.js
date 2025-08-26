@@ -41,7 +41,7 @@ const Order = mongoose.model('Order', orderSchema);
 
 const app = express();
 app.use(cors({
-    origin: "*"
+    origin: "https://sabi2.vercel.app"
 }));
 app.use(bodyParser.json());
 
