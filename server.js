@@ -19,6 +19,12 @@ mongoose.connect("mongodb+srv://sabiha1fashon:o0nuYkGjBIadDtgm@cluster0.hjr4gzg.
 const orderSchema = new mongoose.Schema({
     name: String,
     phone: String,
+    area: {
+        type: String,
+        enum: ['dhaka',   'outside'],
+        default: 'dhaka',
+        required: true
+    },
     address: String,
     email: { type: String, required: false },
     status: {
