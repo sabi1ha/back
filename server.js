@@ -33,6 +33,10 @@ const orderSchema = new mongoose.Schema({
         enum: ['init', 'confirmed via phone', 'confirmed', 'canceled', 'pending', 'delivered'],
         default: 'init',
         required: true
+    },
+     createdAt: {
+        type: Date,
+        default: Date.now // automatically adds timestamp when order is created
     }
 });
 
